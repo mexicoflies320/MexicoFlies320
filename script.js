@@ -169,7 +169,7 @@ function checkAnswers() {
         ILS_CAT1Input: 160,
         GLS_AUTOLANDInput: 160,
         ILS_CAT2_CAT3Input: 0,
-        PARInput: 250,
+        PARInput: 160,
         manualGoAroundInput: 100,
         allOtherPhasesA319Input: 500,
         allOtherPhasesA320Input: 500,
