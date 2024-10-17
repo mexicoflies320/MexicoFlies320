@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbus A320 Limitations Quiz</title>
+    <link rel="stylesheet" href="style.css">
+  
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Airbus A320 Limitations Quiz</h1>
+        <div class="button-container">
+            <button id="resetButton" onclick="resetInputs()" style="background-color: #305CDE;">Reset</button>
+        </div>
+
+        <!-- Aircraft General Section -->
+        <h2 class="section-title">AIRCRAFT GENERAL</h2>
+        <h3>FLIGHT MANEUVERING LOAD ACCELERATION LIMITS</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 200px;"></th>
+                    <th>A319</th>
+                    <th>A320</th>
+                    <th>A321</th>
+                    <th>NEO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Clean Configuration</td>
+                    <td colspan="4">
+                        <div class="input-container" id="minmax">
+                            <input type="number" id="cleanMin" placeholder="Min" /> g to 
+                            <input type="number" id="cleanMax" placeholder="Max" /> g
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Other Configuration</td>
+                    <td colspan="4">
+                        <div class="input-container" id="minmax">
+                            <input type="number" id="otherMin" placeholder="Min" /> g to 
+                            <input type="number" id="otherMax" placeholder="Max" /> g
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+      
+        <h3>OPERATIONAL PARAMETERS</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 200px;"></th>
+                    <th>A319</th>
+                    <th>A320</th>
+                    <th>A321</th>
+                    <th>NEO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Runway slope</td>
+                    <td><div class="input-container">±<input type="number" id="runwaySlopeA319"/>%</div></td>
+                    <td><div class="input-container">±<input type="number" id="runwaySlopeA320"/>%</div></td>
+                    <td><div class="input-container">±<input type="number" id="runwaySlopeA321"/>%</div></td>
+                    <td><div class="input-container">±<input type="number" id="runwaySlopeNEO"/>%</div></td>
+                </tr>
+                <tr>
+                    <td>Runway altitude</td>
+                    <td><div class="input-container"><input type="number" id="runwayAltitudeA319"/>ft</div></td>
+                    <td><div class="input-container"><input type="number" id="runwayAltitudeA320"/>ft</div></td>
+                    <td><div class="input-container"><input type="number" id="runwayAltitudeA321"/>ft</div></td>
+                    <td><div class="input-container"><input type="number" id="runwayAltitudeNEO"/>ft</div></td>
+                </tr>
+                <tr>
+                    <td>Nominal runway width</td>
+                    <td><div class="input-container"><input type="number" id="nominalRunwayWidthA319"/>m</div></td>
+                    <td><div class="input-container"><input type="number" id="nominalRunwayWidthA320"/>m</div></td>
+                    <td><div class="input-container"><input type="number" id="nominalRunwayWidthA321"/>m</div></td>
+                    <td><div class="input-container"><input type="number" id="nominalRunwayWidthNEO"/>m</div></td>
+                </tr>
+                <tr>
+                    <td>Minimal runway width</td>
+                    <td><div class="input-container"><input type="number" id="minimalRunwayWidthA319" />m</div></td>
+                    <td><div class="input-container"><input type="number" id="minimalRunwayWidthA320" />m</div></td>
+                    <td><div class="input-container"><input type="number" id="minimalRunwayWidthA321" />m</div></td>
+                    <td><div class="input-container"><input type="number" id="minimalRunwayWidthNEO" />m</div></td>
+                </tr>
+                <tr>
+                    <td>Max Demonstrated Crosswind for TakeOff and Landing</td>
+                    <td><div class="input-container"><input type="number" id="maxDemoWindTOA319" />kt</div></td>
+                    <td><div class="input-container"><input type="number" id="maxDemoWindTOA320" />kt</div></td>
+                    <td><div class="input-container"><input type="number" id="maxDemoWindTOA321" />kt</div></td>
+                    <td><div class="input-container"><input type="number" id="maxDemoWindTONEO" />kt</div></td>
+                </tr>
+                <tr>
+                    <td>Max Tailwind for TakeOff and Landing</td>
+                    <td><div class="input-container"><input type="number" id="maxTailwindTOA319" />kt</div></td>
+                    <td><div class="input-container"><input type="number" id="maxTailwindTOA320" />kt</div></td>
+                    <td><div class="input-container"><input type="number" id="maxTailwindTOA321" />kt</div></td>
+                    <td><div class="input-container"><input type="number" id="maxTailwindTONEO" />kt</div></td>
+                </tr>
+                <tr>
+                    <td>Max Wind for Passenger Door Operation</td>
+                    <td><div class="input-container"><input type="number" id="maxWindPaxDoorA319" />kt</div></td>
+                    <td><div class="input-container"><input type="number" id="maxWindPaxDoorA320" />kt</div></td>
+                    <td><div class="input-container"><input type="number" id="maxWindPaxDoorA321" />kt</div></td>
+                    <td><div class="input-container"><input type="number" id="maxWindPaxDoorNEO" />kt</div></td>
+                </tr>
+                <tr>
+                    <td>AFT and FWD Cargo Doors Closed Before Wind Reaches</td>
+                    <td><div class="input-container"><input type="number" id="cargoDoorLimitA319" />kt</div></td>
+                    <td><div class="input-container"><input type="number" id="cargoDoorLimitA320" />kt</div></td>
+                    <td><div class="input-container"><input type="number" id="cargoDoorLimitA321" />kt</div></td>
+                    <td><div class="input-container"><input type="number" id="cargoDoorLimitNEO" />kt</div></td>
+                </tr>
+            </tbody>
+        </table>
+      
+      <h3>MAXIMUM OPERATING SPEED</h3>
+        <table>
+            <!-- Max Operating Speed -->
+            <tr>
+                <th style="width: 200px;"></th>
+                <th>A319</th>
+                <th>A320</th>
+                <th>A321</th>
+                <th>NEO</th>
+            </tr>
+            <tr>
+                <td>VMO</td>
+                <td><div class="input-container"><input type="number" id="vmoA319">kt</div></td>
+                <td><div class="input-container"><input type="number" id="vmoA320">kt</div></td>
+                <td><div class="input-container"><input type="number" id="vmoA321">kt</div></td>
+                <td><div class="input-container"><input type="number" id="vmoNEO">kt</div></td>
+            </tr>
+            <tr>
+                <td>MMO</td>
+                <td><div class="input-container">M<input type="number" id="mmoA319"></div></td>
+                <td><div class="input-container">M<input type="number" id="mmoA320"></div></td>
+                <td><div class="input-container">M<input type="number" id="mmoA321"></div></td>
+                <td><div class="input-container">M<input type="number" id="mmoNEO"></div></td>
+            </tr>
+        </table>
+      
+      <h3>MAX FLAP / SLAT SPEEDS</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 200px;">Configuration on Slat/Flap Display</th>
+                    <th>A319</th>
+                    <th>A320</th>
+                    <th>A321</th>
+                    <th>NEO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><div class="input-container"><input type="number" id="flaps1A319Input">kt</div></td>
+                    <td><div class="input-container"><input type="number" id="flaps1A320Input">kt</div></td>
+                    <td><div class="input-container"><input type="number" id="flaps1A321Input">kt</div></td>
+                    <td><div class="input-container"><input type="number" id="flaps1NEOInput">kt</div></td>
+                </tr>
+                <tr>
+                    <td>1 + F</td>
+                    <td><div class="input-container"><input type="number" id="flaps1F_A319Input">kt</div></td>
+                    <td><div class="input-container"><input type="number" id="flaps1F_A320Input">kt</div></td>
+                    <td><div class="input-container"><input type="number" id="flaps1F_A321Input">kt</div></td>
+                    <td><div class="input-container"><input type="number" id="flaps1F_NEOInput">kt</div></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><div class="input-container"><input type="number" id="flaps2_A319Input">kt</div></td>
+                    <td><div class="input-container"><input type="number" id="flaps2_A320Input">kt</div></td>
+                    <td><div class="input-container"><input type="number" id="flaps2_A321Input">kt</div></td>
+                    <td><div class="input-container"><input type="number" id="flaps2_NEOInput">kt</div></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><div class="input-container"><input type="number" id="flaps3_A319Input">kt</div></td>
+                    <td><div class="input-container"><input type="number" id="flaps3_A320Input">kt</div></td>
+                    <td><div class="input-container"><input type="number" id="flaps3_A321Input">kt</div></td>
+                    <td><div class="input-container"><input type="number" id="flaps3_NEOInput">kt</div></td>
+                </tr>
+                <tr>
+                    <td>FULL</td>
+                    <td><div class="input-container"><input type="number" id="flapsFull_A319Input">kt</div></td>
+                    <td><div class="input-container"><input type="number" id="flapsFull_A320Input">kt</div></td>
+                    <td><div class="input-container"><input type="number" id="flapsFull_A321Input">kt</div></td>
+                    <td><div class="input-container"><input type="number" id="flapsFull_NEOInput">kt</div></td>
+                </tr>
+                <tr>
+                    <td>Max Altitude Flaps/Slats Extended</td>
+                    <td><div class="input-container"><input type="number" id="maxAltitudeFlapsA319">ft</div></td>
+                    <td><div class="input-container"><input type="number" id="maxAltitudeFlapsA320">ft</div></td>
+                    <td><div class="input-container"><input type="number" id="maxAltitudeFlapsA321">ft</div></td>
+                    <td><div class="input-container"><input type="number" id="maxAltitudeFlapsNEO">ft</div></td>
+                </tr>
+            </tbody>
+        </table>
+      
+      <h3>OTHER SPEEDS</h3>
+      <table>
+          <thead>
+              <tr>
+                  <th style="width: 200px;"></th>
+                  <th>A319</th>
+                  <th>A320</th>
+                  <th>A321</th>
+                  <th>NEO</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>Cockpit Window Open Maximum Speed</td>
+                  <td><div class="input-container"><input type="number" id="cockpitWindowOpenMaxSpeedA319Input">kt</div></td>
+                  <td><div class="input-container"><input type="number" id="cockpitWindowOpenMaxSpeedA320Input">kt</div></td>
+                  <td><div class="input-container"><input type="number" id="cockpitWindowOpenMaxSpeedA321Input">kt</div></td>
+                  <td><div class="input-container"><input type="number" id="cockpitWindowOpenMaxSpeedNEOInput">kt</div></td>
+              </tr>
+              <tr>
+                  <td>Max Ground Speed / Max Tire Speed</td>
+                  <td><div class="input-container"><input type="number" id="maxGroundSpeedA319Input">kt</div></td>
+                  <td><div class="input-container"><input type="number" id="maxGroundSpeedA320Input">kt</div></td>
+                  <td><div class="input-container"><input type="number" id="maxGroundSpeedA321Input">kt</div></td>
+                  <td><div class="input-container"><input type="number" id="maxGroundSpeedNEOInput">kt</div></td>
+              </tr>
+              <tr>
+                  <td>Wipers Max Operating Speed</td>
+                  <td><div class="input-container"><input type="number" id="maxWipersSpeedA319Input"> kt</div></td>
+                  <td><div class="input-container"><input type="number" id="maxWipersSpeedA320Input"> kt</div></td>
+                  <td><div class="input-container"><input type="number" id="maxWipersSpeedA321Input"> kt</div></td>
+                  <td><div class="input-container"><input type="number" id="maxWipersSpeedNEOInput"> kt</div></td>
+              </tr>
+              <tr>
+                  <td>Min Control Speed for Landing (VMCL) *</td>
+                  <td><div class="input-container"><input type="number" id="vmclA319Input">kt</div></td>
+                  <td><div class="input-container"><input type="number" id="vmclA320Input">kt</div></td>
+                  <td><div class="input-container"><input type="number" id="vmclA321Input">kt</div></td>
+                  <td><div class="input-container"><input type="number" id="vmclNEOInput">kt</div></td>
+              </tr>
+          </tbody>
+      </table>
+      
+      <p style="font-size: smaller; text-decoration: underline;">* VMCL can vary from aircraft to aircraft, regardless of aircraft type or engine type (e.g. XA-YAA (A321-271N): 115 kt, N510VL (A320-233): 109 kt). Verify actual value before each flight.</p>
+      
+      <br>
+        <h3>WEIGHT LIMITATIONS *</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 200px;"></th>
+                    <th>A319 <span style="font-size: smaller; text-decoration: underline;">(1)</span></th>
+                    <th>A320 **</th>
+                    <th>A320 NEO</th>
+                    <th>A321</th>
+                    <th>A321 NEO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Max Taxi Weight</td>
+                    <td><div class="input-container"><input type="number" id="mtwA319"> kg</div></td>
+                    <td><div class="input-container"><input type="number" id="mtwA320"> kg</div></td>
+                    <td><div class="input-container"><input type="number" id="mtwA320NEO"> kg</div></td>
+                    <td><div class="input-container"><input type="number" id="mtwA321"> kg</div></td>
+                    <td><div class="input-container"><input type="number" id="mtwA321NEO"> kg</div></td>
+                </tr>
+                <tr>
+                    <td>Max Takeoff Weight (Brake Release)</td>
+                    <td><div class="input-container"><input type="number" id="mtowbrA319"> kg</div></td>
+                    <td><div class="input-container"><input type="number" id="mtowbrA320"> kg</div></td>
+                    <td><div class="input-container"><input type="number" id="mtowbrA320NEO"> kg</div></td>
+                    <td><div class="input-container"><input type="number" id="mtowbrA321"> kg</div></td>
+                    <td><div class="input-container"><input type="number" id="mtowbrA321NEO"> kg</div></td>
+                </tr>
+                <tr>
+                    <td>Max Landing Weight</td>
+                    <td><div class="input-container"><input type="number" id="mlwA319"> kg</div></td>
+                    <td><div class="input-container"><input type="number" id="mlwA320"> kg</div></td>
+                    <td><div class="input-container"><input type="number" id="mlwA320NEO"> kg</div></td>
+                    <td><div class="input-container"><input type="number" id="mlwA321"> kg</div></td>
+                    <td><div class="input-container"><input type="number" id="mlwA321NEO"> kg</div></td>
+                </tr>
+                <tr>
+                    <td>Max Zero Fuel Weight</td>
+                    <td><div class="input-container"><input type="number" id="mzfwA319"> kg</div></td>
+                    <td><div class="input-container"><input type="number" id="mzfwA320"> kg</div></td>
+                    <td><div class="input-container"><input type="number" id="mzfwA320NEO"> kg</div></td>
+                    <td><div class="input-container"><input type="number" id="mzfwA321"> kg</div></td>
+                    <td><div class="input-container"><input type="number" id="mzfwA321NEO"> kg</div></td>
+                </tr>
+                <tr>
+                    <td>Minimum Weight</td>
+                    <td><div class="input-container"><input type="number" id="mwA319"> kg</div></td>
+                    <td><div class="input-container"><input type="number" id="mwA320"> kg</div></td>
+                    <td><div class="input-container"><input type="number" id="mwA320NEO"> kg</div></td>
+                    <td><div class="input-container"><input type="number" id="mwA321"> kg</div></td>
+                    <td><div class="input-container"><input type="number" id="mwA321NEO"> kg</div></td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-size: smaller; text-decoration: underline;"> * Actual weight limitations can vary from aircraft to aircraft, regardless of aircraft type or engine type. Verify actual values before each flight.</p>
+        <p style="font-size: smaller; text-decoration: underline;">(1) Weight Limitations information is based on those applicable to XA-VOC.</p>
+        <p style="font-size: smaller; text-decoration: underline;"> ** Some A320s have a Maximum Taxi Weight and a Maximum Takeoff Weight 1000 kg greater than the ones used for creation of this quiz. Please refer to FCOM > LIMITATIONS > AIRCRAFT GENERAL > WEIGHT > WEIGHT LIMITATIONS before each flight to consult the specifc weight limitations of your aircraft.</p>
+      
+      <br>
+      
+        <p>1. What is the minimum runway altitude for takeoff and landing in an A320?</p>
+        <div class="mcq-container">
+          <label><input type="radio" name="mcQuestion1" value="0 ft" data-correct="false"> 0 ft</label>
+          <label><input type="radio" name="mcQuestion1" value="-1000 ft" data-correct="true"> -1000 ft</label>
+          <label><input type="radio" name="mcQuestion1" value="14100 ft" data-correct="false"> 14100 ft</label>
+        </div>
+      
+        <p>2. What is the maximum runway altitude for takeoff and landing in an A320?</p>
+        <div class="mcq-container">
+          <label><input type="radio" name="mcQuestion2" value="0 ft" data-correct="false"> -2000 ft</label>
+          <label><input type="radio" name="mcQuestion2" value="-1000 ft" data-correct="false"> -1000 ft</label>
+          <label><input type="radio" name="mcQuestion2" value="14100 ft" data-correct="true"> 14100 ft</label>
+        </div>
+
+        <p>3. What is VMO for turbulence?</p>
+        <div class="mcq-container">
+          <label><input type="radio" name="mcQuestion3" value="0 ft" data-correct="false"> 275 kt</label>
+          <label><input type="radio" name="mcQuestion3" value="-1000 ft" data-correct="false"> M 0.76</label>
+          <label><input type="radio" name="mcQuestion3" value="14100 ft" data-correct="true"> VMO for turbulence? What the fuck does that
+          even mean? There is not such a thing as VMO or MMO for turbulence. Whoever made those charts has a blood clot in their brain.
+          </label>
+        </div>
+
+        <!-- APU / AIR COND SECTION -->
+        <h2 class="section-title">AIR BLEED / COND / PRESS / VENT</h2>
+        <h3>AVIONICS VENTILATION</h3>
+      
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 200px;"></th>
+                    <th>A319</th>
+                    <th>A320</th>
+                    <th>A321</th>
+                    <th>NEO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>OAT &le; 49° C</td>
+                    <td colspan="4">NO LIMITATION</td>
+                </tr>
+                <tr>
+                    <td>49° C &lt; OAT &le; 55° C</td>
+                    <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="oat2Input">hr</div></td>
+                </tr>
+                <tr>
+                    <td>55° C &lt; OAT &le; 60° C</td>
+                    <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="oat3Input">hr</div></td>
+                </tr>
+                <tr>
+                    <td>60° C &lt; OAT &le; 64° C</td>
+                    <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="oat4Input">hr</div></td>
+                </tr>
+            </tbody>
+        </table>
+      
+        <h3>CABIN PRESSURE</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 250px;"></th>
+                    <th>A319</th>
+                    <th>A320</th>
+                    <th>A321</th>
+                    <th>NEO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Max Positive Differential Pressure</td>
+                    <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="maxPositiveDiffInput"> PSI</div></td>
+                </tr>
+                <tr>
+                    <td>Max Negative Differential Pressure</td>
+                    <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="maxNegativeDiffInput"> PSI</div></td>
+                </tr>
+                <tr>
+                    <td>Safety Relief Valve Setting</td>
+                    <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="safetyReliefInput"> PSI</div></td>
+                </tr>
+            </tbody>
+        </table>
+      
+        <p>4. What is the maximum recommended time without air conditioning supply with passengers on board?</p>
+        <div class="mcq-container">
+          <label><input type="radio" name="mcQuestion4" data-correct="false">1 hour</label>
+          <label><input type="radio" name="mcQuestion4" data-correct="true">20 minutes</label>
+          <label><input type="radio" name="mcQuestion4" data-correct="false">30 minutes</label>
+        </div>
+        
+        <p>5. Bleed from both APU Bleed and HP Air Start Unit may be used tat the same time.</p>
+        <div class="mcq-container">
+          <label><input type="radio" name="mcQuestion5" data-correct="false">True</label>
+          <label><input type="radio" name="mcQuestion5" data-correct="true">False</label>
+        </div>
+      
+        <p>6. During flight where OAT is 52°C, what is the maximum amount of time the aircraft electric power supply can be used in normal avionics ventilation system configuration?</p>
+        <div class="mcq-container">
+          <label><input type="radio" name="mcQuestion6" data-correct="true">No limitation</label>
+          <label><input type="radio" name="mcQuestion6" data-correct="false">2 hours</label>
+          <label><input type="radio" name="mcQuestion6" data-correct="false">1 hour</label>
+        </div>
+
+      
+        <!-- Auto Flight -->
+        <h2 class="section-title">AUTOFLIGHT</h2>
+        <h3>AUTOPILOT FUNCTION</h3>
+    
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 200px;"></th>
+                    <th>A319</th>
+                    <th>A320</th>
+                    <th>A321</th>
+                    <th>NEO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>At takeoff</td>
+                    <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="takeoffInput"> ft AGL</div></td>
+                </tr>
+                <tr>
+                    <td>In app with F-G/S (LOC, GS)</td>
+                    <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="appFGSInput"> ft AGL</div></td>
+                </tr>
+                <tr>
+                    <td>In app with FINAL APP, V/S, or FPA mode</td>
+                    <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="appFPAInput"> ft AGL</div></td>
+                </tr>
+                <tr>
+                    <td>In circling approach</td>
+                    <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="circlingInput"> ft AGL</div></td>
+                </tr>
+                <tr>
+                    <td>ILS/MLS CAT1</td>
+                    <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="ILS_CAT1Input"> ft AGL</div></td>
+                </tr>
+                <tr>
+                    <td>GLS AUTOLAND</td>
+                    <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="GLS_AUTOLANDInput"> ft AGL</div></td>
+                </tr>
+                <tr>
+                    <td>ILS/MLS CAT2 or CAT3</td>
+                    <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="ILS_CAT2_CAT3Input"> ft AGL</div></td>
+                </tr>
+                <tr>
+                    <td>PAR approach (Precision Approach Radar)</td>
+                    <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="PARInput"> ft AGL</div></td>
+                </tr>
+                <tr>
+                    <td>After manual go-around</td>
+                    <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="manualGoAroundInput"> ft AGL</div></td>
+                </tr>
+                <tr>
+                    <td>In all other phases</td>
+                    <td><div class="input-container"><input type="number" id="allOtherPhasesA319Input"> ft AGL</div></td>
+                    <td><div class="input-container"><input type="number" id="allOtherPhasesA320Input"> ft AGL</div></td>
+                    <td><div class="input-container"><input type="number" id="allOtherPhasesA321Input"> ft AGL</div></td>
+                    <td><div class="input-container"><input type="number" id="allOtherPhasesNEOInput"> ft AGL</div></td>
+                </tr>
+            </tbody>
+        </table>
+      
+            <p>7. When is automatic landing not permitted.</p>
+            <div class="mcq-container">
+              <label><input type="radio" name="mcQuestion8" data-correct="false">When pressure altitude is below 1000 ft</label>
+              <label><input type="radio" name="mcQuestion8" data-correct="true">On Johannesburg 03R/21L runways</label>
+              <label><input type="radio" name="mcQuestion8" data-correct="false">All of the above</label>
+            </div>
+
+      
+         <!-- APU Section -->
+        <h2 class="section-title">AUXILIARY POWER UNIT</h2>
+        <h3>GENERAL</h3>
+      
+        <table>
+            <tr>
+                <td style="width: 200px;"></td>
+                <td>A319</td>
+                <td>A320</td>
+                <td>A321</td>
+                <td>NEO</td>
+            </tr>
+            <tr>
+                <td>Rotor Speed</td>
+                <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="rotorSpeedA319Input"> %</div></td>
+            </tr>
+            <tr>
+                <td>Max EGT for APU start below 35 000 ft</td>
+                <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="maxEGTA319Input"> °C</div></td>
+            </tr>
+            <tr>
+                <td>Max EGT for APU start above 35 000 ft</td>
+                <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="maxEGTA320Input"> °C</div></td>
+            </tr>
+            <tr>
+                <td>Max EGT for APU running</td>
+                <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="maxEGTA321Input"> °C</div></td>
+            </tr>
+        </table>
+
+      <h3>APU BLEED</h3>
+        <table>
+            <tr>
+                <th style="width: 200px;"></th>
+                <th>A319</th>
+                <th>A320</th>
+                <th>A321</th>
+                <th>NEO</th>
+            </tr>
+            <tr>
+                <td>Max Altitude to Assist Engine Start</td>
+                <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="maxAltitudeEngineStartInput"> ft</div></td>
+            </tr>
+            <tr>
+                <td>Max Altitude for Air Conditioning and Pressurization (Single Pack Operation)</td>
+                <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="maxAltitude1PackInput"> ft</div></td>
+            </tr>
+            <tr>
+                <td>Max Altitude for Air Conditioning and Pressurization (Dual Pack Opp)</td>
+                <td colspan="4"><div class="input-container" id="minmax"><input type="number" id="maxAltitude2PackInput"> ft</div></td>
+            </tr>
+        </table>
+      
+            <p>8. Use of APU bleed air for wing anti-ice is not permitted.</p>
+            <div class="mcq-container">
+              <label><input type="radio" name="mcQuestion8" data-correct="true">True</label>
+              <label><input type="radio" name="mcQuestion8" data-correct="false">False</label>
+            </div>
+      
+            <p>9. In electrical emergency configuration, what is the maximum altitude for starting the APU?</p>
+            <div class="mcq-container">
+              <label><input type="radio" name="mcQuestion9" data-correct="true">25000 ft</label>
+              <label><input type="radio" name="mcQuestion9" data-correct="false">22500 ft</label>
+              <label><input type="radio" name="mcQuestion9" data-correct="false">20000 ft</label>
+            </div>
+      
+            <p>10. How long must you wait before attempting to start the APU after three consecutive start attempts?</p>
+            <div class="mcq-container">
+              <label><input type="radio" name="mcQuestion10" data-correct="false">30 minutes</label>
+              <label><input type="radio" name="mcQuestion10" data-correct="false">15 minutes</label>
+              <label><input type="radio" name="mcQuestion10" data-correct="true">60 minutes</label>
+            </div>
+     
+            <p>11. APU start is permitted during refuel/defuel procedures.</p>
+            <div class="mcq-container">
+              <label><input type="radio" name="mcQuestion8" data-correct="true">True</label>
+              <label><input type="radio" name="mcQuestion8" data-correct="false">False</label>
+            </div>
+      
+        <!-- Engines Section -->
+        <h2 class="section-title">ENGINES</h2>
+        <h3>THRUST SETTING / EGT LIMITS</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 200px;"> </th>
+                    <th>A319</th>
+                    <th>A320</th>
+                    <th>A321</th>
+                    <th>NEO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Takeoff and Go-Around</td>
+                    <td><div class="input-container"><input type="number" id="toGoAroundA319">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="toGoAroundA320">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="toGoAroundA321">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="toGoAroundNEO">°C</div></td>
+                </tr>
+                <tr>
+                    <td>Maximum Continuous Thrust (MCT)</td>
+                    <td><div class="input-container"><input type="number" id="mctA319">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="mctA320">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="mctA321">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="mctNEO">°C</div></td>
+                </tr>
+                <tr>
+                    <td>Starting</td>
+                    <td><div class="input-container"><input type="number" id="startingA319">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="startingA320">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="startingA321">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="startingNEO">°C</div></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- THRUST SETTING / EGT LIMITS QUESTIONAIRE -->
+        <p>12. With both engines operating, how long can you use TOGA thrust for?</p>
+        <div class="mcq-container">
+            <label><input type="radio" name="mcQuestion12" data-correct="true"> 5 minutes</label>
+            <label><input type="radio" name="mcQuestion12" data-correct="false"> 10 minutes</label>
+            <label><input type="radio" name="mcQuestion12" data-correct="false"> 15 minutes</label>
+        </div>
+        <p>13. How long can the engines operate in MCT setting?</p>
+        <div class="mcq-container">
+            <label><input type="radio" name="mcQuestion13" data-correct="false"> 5 minutes</label>
+            <label><input type="radio" name="mcQuestion13" data-correct="false"> 10 minutes</label>
+            <label><input type="radio" name="mcQuestion13" data-correct="true"> Not limited</label>
+        </div>
+        <p>14. How long can you the engines operate in FLEX thrust mode with one engine inoperative?</p>
+        <div class="mcq-container">
+            <label><input type="radio" name="mcQuestion14" data-correct="false"> 5 minutes</label>
+            <label><input type="radio" name="mcQuestion14" data-correct="true"> 10 minutes</label>
+            <label><input type="radio" name="mcQuestion14" data-correct="false"> Not limited</label>
+        </div>
+
+        <!-- Shaft Speeds Section -->
+        <h3>SHAFT SPEEDS</h3>
+        <form id="shaftSpeedForm">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 200px;"> </th>
+                        <th>A319</th>
+                        <th>A320</th>
+                        <th>A321</th>
+                        <th>NEO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Max N1 in Normal Operation</td>
+                        <td><div class="input-container"><input type="number" id="n1normA319">% </div></td>
+                        <td><div class="input-container"><input type="number" id="n1normA320">% </div></td>
+                        <td><div class="input-container"><input type="number" id="n1normA321">% </div></td>
+                        <td><div class="input-container"><input type="number" id="n1normNEO">% </div></td>
+                    </tr>
+                    <tr>
+                        <td>Max N1 Permitted</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><div class="input-container"><input type="number" id="n1permNEO">% </div></td>
+                    </tr>
+                    <tr>
+                        <td>Max N2 in Normal Operation</td>
+                        <td><div class="input-container"><input type="number" id="n2normA319">% </div></td>
+                        <td><div class="input-container"><input type="number" id="n2normA320">% </div></td>
+                        <td><div class="input-container"><input type="number" id="n2normA321">% </div></td>
+                        <td><div class="input-container"><input type="number" id="n2normNEO">% </div></td>
+                    </tr>
+                    <tr>
+                        <td>Max N2 Permitted</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><div class="input-container"><input type="number" id="n2permNEO">% </div></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- Multiple Choice Question for Shaft Speeds Section -->
+            <h3>Multiple Choice Question</h3>
+            <p>15. What is the maximum N1 permitted in an A320 equipped with PW1100G engines?</p>
+            <div class="mcq-container">
+                <label><input type="radio" name="mcQuestion15" value="100%" data-correct="false"> 100%</label>
+                <label><input type="radio" name="mcQuestion15" value="105%" data-correct="true"> 105%</label>
+                <label><input type="radio" name="mcQuestion15" value="107%" data-correct="false"> 107%</label>
+            </div>
+          <h3>OIL</h3>
+          <table>
+            <thead>
+                <tr>
+                    <th style="width: 200px;"> </th>
+                    <th>A319</th>
+                    <th>A320</th>
+                    <th>A321</th>
+                    <th>NEO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Max Continuous Temperature</td>
+                    <td><div class="input-container"><input type="number" id="maxContTempA319">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="maxContTempA320">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="maxContTempA321">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="maxContTempNEO">°C</div></td>
+                </tr>
+                <tr>
+                    <td>Max Transient Temperature (15 min)</td>
+                    <td><div class="input-container"><input type="number" id="maxTransientTempA319">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="maxTransientTempA320">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="maxTransientTempA321">°C</div></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Min Starting Temperature</td>
+                    <td><div class="input-container"><input type="number" id="minStartTempA319">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="minStartTempA320">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="minStartTempA321">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="minStartTempNEO">°C</div></td>
+                </tr>
+                <tr>
+                    <td>Min Temperature Before IDLE Is Exceeded</td>
+                    <td><div class="input-container"><input type="number" id="minIDLETempA319">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="minIDLETempA320">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="minIDLETempA321">°C</div></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Min Temperature Before TakeOff</td>
+                    <td><div class="input-container"><input type="number" id="minTakeoffTempA319">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="minTakeoffTempA320">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="minTakeoffTempA321">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="minTakeoffTempNEO">°C</div></td>
+                </tr>
+                <tr>
+                    <td>Min Oil Quantity</td>
+                    <td><div class="input-container"><input type="number" id="minOilQtyA319">QTS<br>+0.3/h</div></td>
+                    <td><div class="input-container"><input type="number" id="minOilQtyA320">QTS<br>+0.3/h</div></td>
+                    <td><div class="input-container"><input type="number" id="minOilQtyA321">QTS<br>+0.3/h</div></td>
+                    <td><div class="input-container"><input type="number" id="minOilQtyNEO">QTS</div></td>
+                </tr>
+                <tr>
+                    <td>Min Oil Quantity (OAT below -30ºC)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><div class="input-container"><input type="number" id="minOilQtybNEO" step="0.01">QTS</div></td>
+                </tr>
+                <tr>
+                    <td>Minimum Oil Pressure</td>
+                    <td><div class="input-container"><input type="number" id="minOilPressureA319"> <span>PSI</span></div></td>
+                    <td><div class="input-container"><input type="number" id="minOilPressureA320"> <span>PSI</span></div></td>
+                    <td><div class="input-container"><input type="number" id="minOilPressureA321"> <span>PSI</span></div></td>
+                    <td><div class="input-container"><input type="number" id="minOilPressureNEO"> <span>PSI</span></div></td>
+                </tr>
+                <tr>
+                    <td>Max Oil Pressure</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><div class="input-container"><input type="number" id="maxOilPressureNEO"> <span>PSI</span></div></td>
+                </tr>
+            </tbody>
+        </table>
+          
+                      <!-- Multiple Choice Question for Shaft Speeds Section -->
+            <h3>ENGINE IDLE PARAMETERS (TECHNICALLY NOT A LIMITATION)</h3>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>A319</th>
+                    <th>A320</th>
+                    <th>A321</th>
+                    <th>NEO</th>
+                </tr>
+                <tr>
+                    <td>N1</td>
+                    <td><div class="input-container"><input type="number" id="n1A319Input">%</div></td>
+                    <td><div class="input-container"><input type="number" id="n1A320Input">%</div></td>
+                    <td><div class="input-container"><input type="number" id="n1A321Input">%</div></td>
+                    <td><div class="input-container"><input type="number" id="n1NEOInput">%</div></td>
+                </tr>
+                <tr>
+                    <td>EGT</td>
+                    <td><div class="input-container"><input type="number" id="egtA319Input">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="egtA320Input">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="egtA321Input">°C</div></td>
+                    <td><div class="input-container"><input type="number" id="egtNEOInput">°C</div></td>
+                </tr>
+                <tr>
+                    <td>N2</td>
+                    <td><div class="input-container"><input type="number" id="n2A319Input">%</div></td>
+                    <td><div class="input-container"><input type="number" id="n2A320Input">%</div></td>
+                    <td><div class="input-container"><input type="number" id="n2A321Input">%</div></td>
+                    <td><div class="input-container"><input type="number" id="n2NEOInput">%</div></td>
+                </tr>
+                <tr>
+                    <td>FF</td>
+                    <td><div class="input-container"><input type="number" id="ffA319Input">kg/h</div></td>
+                    <td><div class="input-container"><input type="number" id="ffA320Input">kg/h</div></td>
+                    <td><div class="input-container"><input type="number" id="ffA321Input">kg/h</div></td>
+                    <td><div class="input-container"><input type="number" id="ffNEOInput">kg/h</div></td>
+                </tr>
+                <tr>
+                    <td>EPR (THRUST)</td>
+                    <td><div class="input-container"><input type="number" id="eprA319Input"></div></td>
+                    <td><div class="input-container"><input type="number" id="eprA320Input"></div></td>
+                    <td><div class="input-container"><input type="number" id="eprA321Input"></div></td>
+                    <td></td>
+                </tr>
+            </table>
+
+          
+            <p>16. What is the maximum crosswind component for engine start?</p>
+            <div class="mcq-container">
+                <label><input type="radio" name="mcQuestion16" value="30 kt" data-correct="false"> 30 kt</label>
+                <label><input type="radio" name="mcQuestion16" value="35 kt" data-correct="true"> 35 kt</label>
+                <label><input type="radio" name="mcQuestion16" value="38 kt" data-correct="false"> 38 kt</label>
+            </div>
+          
+            <p>17. In an A320, how long should you wait after one starting cycle?</p>
+            <div class="mcq-container">
+                <label><input type="radio" name="mcQuestion17" value="30 kt" data-correct="true"> 15 s</label>
+                <label><input type="radio" name="mcQuestion17" value="35 kt" data-correct="false"> 35 s</label>
+                <label><input type="radio" name="mcQuestion17" value="38 kt" data-correct="ftrue"> 30 m</label>
+            </div>
+          
+            <p>18. In an A320 equipped with PW1100G engines, how many starting attempts equal one cycle?</p>
+            <div class="mcq-container">
+                <label><input type="radio" name="mcQuestion18" value="30 kt" data-correct="true"> 2 attepmts</label>
+                <label><input type="radio" name="mcQuestion18" value="35 kt" data-correct="false"> 3 attepmts</label>
+                <label><input type="radio" name="mcQuestion18" value="38 kt" data-correct="false"> 10 attempts</label>
+            </div>
+          
+          
+            <div class="button-container">
+                <button type="button" onclick="checkAnswers()" style="background-color: green; color: white;">Check</button>
+            </div>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
