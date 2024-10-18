@@ -50,7 +50,7 @@ function checkAnswers() {
         minOilPressureA321: 60,
         minOilPressureNEO: 65,
         maxOilPressureNEO: 270,
-        cleanMin: -2,
+        cleanMin: -1,
         cleanMax: 2.5,
         otherMin: 0,
         otherMax: 2,
