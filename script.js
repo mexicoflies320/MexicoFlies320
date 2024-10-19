@@ -201,6 +201,9 @@ function checkAnswers() {
         eprA319Input: 1.01,
         eprA320Input: 1.01,
         eprA321Input: 1.01,
+        oat2Input: 2,
+        oat3Input: 1,
+        oat4Input: 0.5,
         thrustQuestion1: "5 minutes", // Correct answer for thrust section question
         thrustQuestion2: "Not limited", // Correct answer for thrust section question
         thrustQuestion3: "10 minutes", // Correct answer for thrust section question
