@@ -204,10 +204,12 @@ function checkAnswers() {
         oat2Input: 2,
         oat3Input: 1,
         oat4Input: 0.5,
-        thrustQuestion1: "5 minutes", // Correct answer for thrust section question
-        thrustQuestion2: "Not limited", // Correct answer for thrust section question
-        thrustQuestion3: "10 minutes", // Correct answer for thrust section question
-        shaftSpeedQuestion: "105%" // Correct answer for shaft speeds section question
+        VLEkt: 280,
+        VLEM: 0.67,
+        VLOExtkt: 250,
+        VLOExtM: 0.60,
+        VLORetkt: 220,
+        VLORetM: 0.54,
     };
 
     let score = 0;
